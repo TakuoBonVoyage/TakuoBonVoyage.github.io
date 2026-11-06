@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Takuo Yamamoto</title>
-<meta name="description" content="Takuo Yamamoto - aerospace engineering major at Brooklyn Tech. Projects, research and resume.">
+<meta name="description" content="Takuo Yamamoto - aerospace engineering student at Brooklyn Tech. Projects, research and resume.">
 <style>
 :root{--blue:#4a6cf7;--ink:#1d2144;--muted:#6b7186;--bg:#f6f7fb;--card:#fff}
 *{margin:0;box-sizing:border-box}
@@ -12,9 +12,8 @@ body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Ar
 .wrap{max-width:1000px;margin:0 auto;padding:48px 24px}
 .hero{display:flex;align-items:center;gap:56px;padding:32px 0 44px}
 .hero img.face{width:280px;height:280px;object-fit:cover;border-radius:50%;border:10px solid #fff;box-shadow:0 8px 30px rgba(29,33,68,.12)}
-.role{color:var(--blue);font-weight:600;letter-spacing:.4px;text-transform:uppercase;font-size:13px}
 h1{font-size:44px;margin:6px 0 14px}
-.bio{color:var(--muted);max-width:480px}
+.bio{color:var(--muted);max-width:480px;margin-bottom:12px}
 .buttons{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 26px;border-radius:30px;font-weight:600;text-decoration:none;font-size:15px;border:2px solid var(--blue)}
 .btn.primary{background:var(--blue);color:#fff}
@@ -35,8 +34,16 @@ h2{font-size:26px;margin-bottom:6px}
 .item .t{font-weight:600}
 .item .d{color:var(--muted);font-size:14px}
 .item a{color:var(--blue);font-weight:600;text-decoration:none;white-space:nowrap}
+.contact-form{background:var(--card);border-radius:16px;box-shadow:0 6px 24px rgba(29,33,68,.07);padding:26px 24px;display:flex;flex-direction:column;gap:16px}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{font-weight:600;font-size:14px;display:flex;flex-direction:column;gap:6px}
+.contact-form input[type=text],.contact-form input[type=email],.contact-form textarea{font-family:inherit;font-size:15px;font-weight:400;padding:10px 14px;border:1px solid #dfe3ee;border-radius:10px;background:#fbfcff;color:var(--ink)}
+.contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--blue);outline-offset:0;border-color:var(--blue)}
+.contact-form .hint{color:var(--muted);font-size:13px;font-weight:400}
+.contact-form button{align-self:flex-start;cursor:pointer;font-family:inherit}
+.sent-note{background:#e8f7ee;border:1px solid #b7e4c7;color:#1e6b3a;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:15px;display:none}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 0 12px}
-@media(max-width:820px){.hero{flex-direction:column;text-align:center;gap:28px}.buttons{justify-content:center}.cards{grid-template-columns:1fr}h1{font-size:34px}.bio{margin:0 auto}}
+@media(max-width:820px){.hero{flex-direction:column;text-align:center;gap:28px}.buttons{justify-content:center}.cards{grid-template-columns:1fr}h1{font-size:34px}.bio{margin:0 auto}.contact-form .row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -44,12 +51,12 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 0 12px}
   <div class="hero">
     <img class="face" src="portrait.png" alt="Takuo Yamamoto">
     <div>
-      <div class="role">Aerospace Engineering Student</div>
       <h1>Takuo Yamamoto</h1>
-      <p class="bio">I'm a senior at Brooklyn Technical High School in New York City. This past summer I was a research assistant at MIT's GEAR Lab, where I built a model comparing electric, hydrogen and diesel truck powertrains. I've also co-founded an NFL prediction site and published research on sustainable aviation fuel. Outside of that, I teach karate.</p>
+      <p class="bio">I'm a senior at Brooklyn Technical High School in New York City, where I study aerospace engineering. This past summer, I worked as a research assistant at MIT's GEAR Lab, developing a model comparing electric, hydrogen, and diesel truck powertrains. I've also co-founded an NFL prediction website and published a literature review on sustainable aviation fuel.</p>
+      <p class="bio">Outside the classroom, I work with Brooklyn Boatworks, a nonprofit that introduces young people to boatbuilding, sailing, and maritime skills. I also was a dockhand at Brooklyn Bridge Marina! I'm passionate about aviation and enjoy exploring the nodes between engineering, technology, and business. I also enjoy hiking and completed the Tour du Mont Blanc, a multi-day trek through France, Italy, and Switzerland, last summer! I love Seattle, and am a huge Mariners &amp; Seahawks fan.</p>
       <div class="buttons">
         <a class="btn primary" href="Takuo-Yamamoto-Resume.pdf">Download CV</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/takuo-yamamoto-8aa756346">Contact on LinkedIn</a>
+        <a class="btn ghost" href="#contact">Contact</a>
       </div>
     </div>
   </div>
@@ -91,15 +98,42 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 0 12px}
     </div>
   </section>
 
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="sub">Send me a message right from here.</p>
+    <div class="sent-note" id="sentNote">Thanks - your message was sent. I'll get back to you soon.</div>
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="5f0b188c-22cb-4323-86c4-c0b69025a94b">
+      <input type="hidden" name="subject" value="New message from your portfolio site">
+      <input type="hidden" name="redirect" value="https://oppsanerrorhasoccured.github.io/?sent=1#contact">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <div class="row">
+        <label>Your name
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>Your email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+      </div>
+      <label>Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <span class="hint">Messages are screened for spam before they reach me.</span>
+      <button class="btn primary" type="submit">Send message</button>
+    </form>
+  </section>
+
   <section>
     <h2>Elsewhere</h2>
     <div class="list">
       <div class="item"><div><div class="t">LinkedIn</div><div class="d">Experience, education and connections.</div></div><a href="https://www.linkedin.com/in/takuo-yamamoto-8aa756346">View profile &rarr;</a></div>
-      <div class="item"><div><div class="t">GitHub</div><div class="d">Code for this site and other projects.</div></div><a href="https://github.com/OppsAnErrorHasOccured">View profile &rarr;</a></div>
     </div>
   </section>
 
   <footer>&copy; 2026 Takuo Yamamoto &middot; Hosted on GitHub Pages</footer>
 </div>
+<script>
+if(location.search.indexOf('sent=1')!==-1){document.getElementById('sentNote').style.display='block';}
+</script>
 </body>
 </html>
